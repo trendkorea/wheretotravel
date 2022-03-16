@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+
+
+
+    
+    #legend1 {
+    z-index: 1000;
+    position: absolute;
+    background-color:white;
+    top:35vh;
+    left:2vw;
+    width:13%;
+    border-radius:25%;
+    padding-bottom : 13%;
+    align-content: center;
+    text-align:center;
+    font-size:14px;
+    font-family: 'Jeju Gothic',sans-serif;
+    font-weight: bolder;
+    border: 7px solid rgba(210,69,69,0.5);
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4)
+    }
+
+  
+
+    #legend2 {
+    z-index: 1000;
+    position: absolute;
+    left:2vw;
+    top:50vh;
+    background-color:white;
+    width:13%;
+    padding-bottom : 13%;
+    border-radius:25%;
+    text-align:center;
+    font-size:14px;
+    font-family: 'Jeju Gothic',sans-serif;
+    font-weight: bolder;
+    border: 7px solid rgba(210,210,33,0.8);
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4)
+    }
+
+    #legend3 {
+    z-index: 1000;
+    position: absolute;
+    left:2vw;
+    top:65vh;
+    background-color:white;
+    width:13%;
+    padding-bottom : 13%;
+    border-radius:25%;
+    text-align:center;
+    font-size:14px;
+    font-family: 'Jeju Gothic',sans-serif;
+    font-weight: bolder;
+    border: 7px solid rgba(33,210,92,0.5);
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4)
+    }
+
+    #legend4 {
+    z-index: 1000;
+    position: absolute;
+    left:2vw;
+    top:80vh;
+    background-color:white;
+    width:13%;
+    padding-bottom : 13%;
+    border-radius:25%;
+    text-align:center;
+    font-size:14px;
+    font-family: 'Jeju Gothic',sans-serif;
+    font-weight: bolder;
+    border: 7px solid rgba(83,69,210,0.8);
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4)
+    }
+
+    #legendtext1{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform : translate(-50%, -50%); 
+    }
+
+   
+    #legendtext2{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform : translate(-50%, -50%);  
+    }
+
+    #legendtext3{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform : translate(-50%, -50%);  
+    }
+
+    #legendtext4{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform : translate(-50%, -50%); 
+    }
+
+    #currentdate {
+        z-index: 100;
+        position:absolute;
+        margin-left:2vw;
+        top:3vh;
+        font-family:'Jeju Gothic', sans-serif;
+        font-size:16px;
+        color:#3b8a68;
+        font-weight: bolder;
+
+    }
+
+  
+
+@media ( min-width: 768px ) {
+
+    #legend1 {
+    z-index: 1000;
+    position: absolute;
+    background-color:white;
+    top:30vh;
+    left:2vw;
+    width:80px;
+    padding-bottom : 80px;
+    border-radius:25%;
+    align-content: center;
+    text-align:center;
+    font-size:18px;
+    font-family: 'Jeju Gothic',sans-serif;
+    font-weight: bolder;
+    border: 7px solid rgba(210,69,69,0.5);
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4)
+    
+    }
+
+
+  
+
+    #legend2 {
+    z-index: 1000;
+    position: absolute;
+    left:2vw;
+    top:45vh;
+    background-color:white;
+    width:80px;
+    padding-bottom : 80px;
+    border-radius:25%;
+    text-align:center;
+    font-size:18px;
+    font-family: 'Jeju Gothic',sans-serif;
+    font-weight: bolder;
+    border: 7px solid rgba(210,210,33,0.8);
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4)
+    }
+
+    #legend3 {
+    z-index: 1000;
+    position: absolute;
+    left:2vw;
+    top:60vh;
+    background-color:white;
+    width:80px;
+    padding-bottom : 80px;
+    border-radius:25%;
+    text-align:center;
+    font-size:18px;
+    font-family: 'Jeju Gothic',sans-serif;
+    font-weight: bolder;
+    border: 7px solid rgba(33,210,92,0.5);
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4)
+    }
+
+    #legend4 {
+    z-index: 1000;
+    position: absolute;
+    left:2vw;
+    top:75vh;
+    background-color:white;
+    width:80px;
+    padding-bottom : 80px;
+    border-radius:25%;
+    text-align:center;
+    font-size:18px;
+    font-family: 'Jeju Gothic',sans-serif;
+    font-weight: bolder;
+    border: 7px solid rgba(83,69,210,0.8);
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4)
+    }
+
+    #currentdate {
+        z-index: 100;
+        position:absolute;
+        margin-left:2vw;
+        top:3vh;
+        font-family:'Jeju Gothic', sans-serif;
+        font-size:20px;
+        color: #3b8a68;
+        font-weight: bolder;
+    }
+
+
+
+}
+
+
+
+    </style>
+    <meta charset="UTF-8">
+    <title>travelmap</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+    <div id="currentdate">(2022.03.16기준)</div>
+    <div id="legend1"><div id="legendtext1">여행<br>불가</div></div>
+    <div id="legend2"><div id="legendtext2">자가<br>격리<br>필요</div></div>
+    <div id="legend3"><div id="legendtext3">음성<br>증명<br>필요</div></div>
+    <div id="legend4"><div id="legendtext4">제약<br>없음</div></div>
+
+</head>
+<body>
+<div id='map' style='position: relative; width: 97vw; height: 86vh; align-items: center; '></div>
+<div></div>
+<div id="banner">코시국 여행지</div>
+<div style="margin-top:0.5vh; font-family: 'Jeju Gothic', sans-serif; font-size:12px">본 정보는 참고용이며, 정확한 내용은 대사관 및 탑승 항공사를 통해 확인하시기 바랍니다.</div>
+<div style="font-family:'Jeju Gothic',sans-serif; text-align: left; font-size : 30px; margin-top: 60px; margin-left:1vw">지금 떠오르는 여행지</div>
+<div >
+    <div id="card">
+     <div style="float:left">
+        <div style="float:left"><img style="float:left; width:200px; height:35vh; object-fit:cover; border-top-left-radius: 20px; border-bottom-left-radius: 20px;overflow: hidden" src="https://images.unsplash.com/photo-1492136344046-866c85e0bf04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=864&q=80" ></img></div>
+        <div style="float:left; margin-left:3vw; margin-top:20px;">
+            <div class="text-margin1"></div>
+            <div class="title"><span>프랑스</span>&ensp;<a href=https://www.instagram.com/explore/tags/%ED%8C%8C%EB%A6%AC%EC%97%AC%ED%96%89/ target='_blank'><img src="https://yeongmin.s3.ap-northeast-2.amazonaws.com/instagram.png" style="width:28.8px; height:41.4px; object-fit:cover; vertical-align: middle;"></img></a></div>
+            <div class="subtitle">제약없이 여행 가능</div>
+            <div class="text3">(단, 백신 미접종자는 음성증명서 필요)</div>
+            <div class="text2">대표 여행지 ｜ 에펠탑, 루브르박물관,<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;지베르니, 디즈니랜드</div>
+            <div style="float:left;">
+             <div class="button1"><a href=https://www.skyscanner.co.kr/ target='_blank' style="text-decoration:none; color:black">상세 여행정보</a></div>
+             <div class="button2"><a href=https://www.skyscanner.co.kr/ target='_blank' style="text-decoration:none; color:white">항공권 검색</a></div>
+            </div>
+        </div>
+     </div>
+    </div>
+
+    <div id="card">
+        <div style="float:left">
+           <div style="float:left"><img style="float:left; width:200px; height:35vh; object-fit:cover; border-top-left-radius: 20px; border-bottom-left-radius: 20px;overflow: hidden" src="https://images.unsplash.com/photo-1607867283465-d6792016b481?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80" ></img></div>
+           <div style="float:left; margin-left:3vw; margin-top:20px;">
+               <div class="text-margin1"></div>
+               <div class="title"><span>스위스</span>&ensp;<a href=https://www.instagram.com/explore/tags/%EC%8A%A4%EC%9C%84%EC%8A%A4/ target='_blank'><img src="https://yeongmin.s3.ap-northeast-2.amazonaws.com/instagram.png" style="width:28.8px; height:41.4px; object-fit:cover; vertical-align: middle;"></img></a></div>
+               <div class="subtitle">제약없이 여행 가능</div>
+               <div class="text3">백신 미접종자도 여행 가능</div>
+               <div class="text2">대표 여행지 ｜ 융프라우, 마테호른, 베른,<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;취리히, 몽트뢰</div>
+               <div style="float:left">
+                <div class="button1"><a href=https://www.skyscanner.co.kr/ target='_blank' style="text-decoration:none; color:black">상세 여행정보</a></div>
+                <div class="button2"><a href=https://www.skyscanner.co.kr/ target='_blank' style="text-decoration:none; color:white">항공권 검색</a></div>
+               </div>
+           </div>
+        </div>
+       </div>
+
+       <div id="card">
+        <div style="float:left">
+           <div style="float:left"><img style="float:left; width:200px; height:35vh; object-fit:cover; border-top-left-radius: 20px; border-bottom-left-radius: 20px;overflow: hidden" src="https://images.unsplash.com/photo-1547537352-ae90c682877e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" ></img></div>
+           <div style="float:left; margin-left:3vw; margin-top:20px;">
+               <div class="text-margin1"></div>
+               <div class="title"><span>하와이</span>&ensp;<a href=https://www.instagram.com/explore/tags/%ED%95%98%EC%99%80%EC%9D%B4%EC%97%AC%ED%96%89/ target='_blank'><img src="https://yeongmin.s3.ap-northeast-2.amazonaws.com/instagram.png" style="width:28.8px; height:41.4px; object-fit:cover; vertical-align: middle;"></img></a></div>
+               <div class="subtitle">백신 접종 시 여행 가능</div>
+               <div class="text3">코로나 음성증명서 제출 필요</div>
+               <div class="text2">대표 여행지 ｜ 와이키키, 빅아일랜드,<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;이올라니 궁전</div>
+               <div style="float:left">
+                <div class="button1"><a href=https://www.skyscanner.co.kr/ target='_blank' style="text-decoration:none; color:black">상세 여행정보</a></div>
+                <div class="button2"><a href=https://www.skyscanner.co.kr/ target='_blank' style="text-decoration:none; color:white">항공권 검색</a></div>
+               </div>
+           </div>
+        </div>
+       </div>
+
+       <div id="card">
+        <div style="float:left">
+           <div style="float:left"><img style="float:left; width:200px; height:35vh; object-fit:cover; border-top-left-radius: 20px; border-bottom-left-radius: 20px;overflow: hidden" src="https://images.unsplash.com/photo-1508964942454-1a56651d54ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80" ></img></div>
+           <div style="float:left; margin-left:3vw; margin-top:20px;">
+               <div class="text-margin1"></div>
+               <div class="title"><span>싱가포르</span>&ensp;<a href=https://www.instagram.com/explore/tags/%EC%8B%B1%EA%B0%80%ED%8F%AC%EB%A5%B4%EC%97%AC%ED%96%89/ target='_blank'><img src="https://yeongmin.s3.ap-northeast-2.amazonaws.com/instagram.png" style="width:28.8px; height:41.4px; object-fit:cover; vertical-align: middle;"></img></a></div>
+               <div class="subtitle">백신 접종 시 여행 가능</div>
+               <div class="text3">코로나 음성증명서 제출 필요</div>
+               <div class="text2">대표 여행지 ｜ 마리나베이, 센토사섬,<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;유니버셜 스튜디오</div>
+               <div style="float:left">
+                <div class="button1"><a href=https://www.skyscanner.co.kr/ target='_blank' style="text-decoration:none; color:black">상세 여행정보</a></div>
+                <div class="button2"><a href=https://www.skyscanner.co.kr/ target='_blank' style="text-decoration:none; color:white">항공권 검색</a></div>
+               </div>
+           </div>
+        </div>
+       </div>
+
+
+
+
+   
+   
+</div>
+
+<style>
+
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+/* Popups (adjustments to emulate Leaflet.js) */
+@keyframes fadein {from {opacity: 0;} to {opacity: 1;}}
+.mapboxgl-popup {animation: fadein 0.2s;}
+.mapboxgl-popup-content {width: 250px; border-radius: 20px; box-shadow: 0 3px 14px rgba(0,0,0,0.4)}
+.mapboxgl-popup-close-button {font-size: 16px; font-family: Tahoma, Verdana, sans-serif; color: #c3c3c3; font-weight: bold;}
+.mapboxgl-popup-close-button:hover {color: #999; background-color: white; border-top-right-radius: 12px;}
+body .mapboxgl-map {line-height: 1.4;}
+
+#card {
+    align-self: center;
+  margin-top : 5vh;
+  align-items: left;
+  font-family: 'Jeju Gothic', sans-serif;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0.4px 3.6px rgba(0, 0, 0, 0.004),
+    0 1px 8.5px rgba(0, 0, 0, 0.01), 0 1.9px 15.7px rgba(0, 0, 0, 0.019),
+    0 3.4px 28.2px rgba(0, 0, 0, 0.03), 0 6.3px 54.4px rgba(0, 0, 0, 0.047),
+    0 15px 137px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 90vw;
+  height: 35vh
+
+}
+
+#banner {
+    background-color: #4EC08E;
+    text-align: center;
+    color: white;
+    font-family: 'Jeju Gothic', sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    width:97vw;
+    height:50px;
+    display:table-cell;
+    vertical-align: middle;
+}
+
+.text {
+  font-family: 'Jeju Gothic', sans-serif;
+  padding-left:5px;
+  padding-right: 5px;
+  width: 100%;
+}
+.title {
+  align-items: left;
+  display: flex;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 12px;
+  margin-bottom: 2px;
+  position: relative;
+  line-height: 30px;
+  vertical-align:middle;
+}
+.subtitle {
+  align-items: center;
+  display: flex;
+  font-size: 20px;
+  font-weight: 600;
+  color: #4EC08E;
+  margin-top:5px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.text-margin1 {
+    margin-top :5px
+} 
+
+.text1 {
+  display: flex;
+  font-size: 12.5px;
+  font-weight: lighter;
+  color: gray;
+  margin-top : 5px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.text2 {
+  display: flex;
+  font-size: 12px;
+  font-weight: lighter;
+  color: gray;
+  margin-top : 5px;
+  position: relative;
+}
+
+.text3 {
+  display: flex;
+  font-size: 12px;
+  font-weight: lighter;
+  color: #4EC08E;
+  margin-top : 5px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.button {
+  font-family: 'Jeju Gothic', sans-serif;
+  font-size : 20px;
+  align-self: center;
+  align-items: center;
+  background: #0060f6;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  margin-bottom: 1px;
+  margin-top:2px;
+  width: 100%;
+}
+
+.button1 {
+    float:left;
+  font-family: 'Jeju Gothic', sans-serif;
+  font-size : 16px;
+  align-self: center;
+  align-items: center;
+  background: lightgray;
+  color: black;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  height: 6vh;
+  width: 15vh;
+  justify-content: center;
+  margin-bottom:0.5vh;
+  margin-top:2vh;
+}
+
+.button2 {
+    float:left;
+  font-family: 'Jeju Gothic', sans-serif;
+  font-size : 16px;
+  align-self: center;
+  align-items: center;
+  background: #0060f6;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  height: 6vh;
+  width: 15vh;
+  justify-content: center;
+  margin-bottom: 0.5vh;
+  margin-top:2vh;
+  margin-left: 2vh
+}
+
+@media ( min-width: 992px ) {
+        #card {
+        float:left;
+        align-self: center;
+    margin-top : 3vh;
+    align-items: left;
+    font-family: 'Jeju Gothic', sans-serif;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0.4px 3.6px rgba(0, 0, 0, 0.004),
+        0 1px 8.5px rgba(0, 0, 0, 0.01), 0 1.9px 15.7px rgba(0, 0, 0, 0.019),
+        0 3.4px 28.2px rgba(0, 0, 0, 0.03), 0 6.3px 54.4px rgba(0, 0, 0, 0.047),
+        0 15px 137px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 46vw;
+    height: 35vh;
+    margin-left: 2vw;
+    margin-bottom: 3vh
+
+    }
+
+    .button1 {
+        float:left;
+    font-family: 'Jeju Gothic', sans-serif;
+    font-size : 16px;
+    align-self: center;
+    align-items: center;
+    background: lightgray;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    height: 6vh;
+    width: 16vh;
+    justify-content: center;
+    margin-bottom:0.5vh;
+    margin-top:2vh;
+    }
+
+    .button2 {
+        float:left;
+    font-family: 'Jeju Gothic', sans-serif;
+    font-size : 16px;
+    align-self: center;
+    align-items: center;
+    background: #0060f6;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    height: 6vh;
+    width: 16vh;
+    justify-content: center;
+    margin-bottom: 0.5vh;
+    margin-top:2vh;
+    margin-left: 2vh
+    }
+
+}
+</style>
+
+<script>
+
+mapboxgl.accessToken = 'pk.eyJ1IjoieWVvbmdtaW4iLCJhIjoiY2thcWJjaXNoMm56dTJxbXN6bnZtM2tobyJ9.wxPm6mCqSiTieTOfagxN2A';
+const map = new mapboxgl.Map({
+container: 'map', // container ID
+style: 'mapbox://styles/yeongmin/cl0eyabeo00hz15oiockcbdht', // style URL
+center: [127, 37.5], // starting position [lng, lat]
+zoom: 2, // starting zoom
+maxZoom : 4,
+minZoom : 2,
+
+});
+
+
+
+
+
+
+
+
+
+
+map.on('load', function() {
+    map.addSource('nations1',{
+        'type' : 'geojson',
+        'data' : 'https://yeongmin.s3.ap-northeast-2.amazonaws.com/base1.geojson'
+    });
+    map.addLayer({
+        'id' : 'nations-layer1',
+        'type' : 'fill',
+        'source' : 'nations1',
+        'paint' : {
+
+            'fill-color': 'rgba(210,69,69,0.5)',
+            'fill-outline-color': 'rgba(210,69,69,0.8)',
+        },
+
+    });
+
+  
+
+    map.on('click', 'nations-layer1', (e) => {
+            map.flyTo({
+            center: [e.lngLat.lng, e.lngLat.lat - 15] ,
+            zoom: 3
+            });
+        });
+
+    const popup = new mapboxgl.Popup();
+
+    
+
+    map.on('click', 'nations-layer1', function (e) {
+        var nationname = e.features[0].properties.NATION;
+        var travelimg = e.features[0].properties.TRAVELIMG;
+        
+
+
+        var content = `
+                         <img src="${travelimg}" style="margin-top:20px; width:250px; height:148px; filter: grayscale(100%);"></img>
+                         <div class="text">
+                          <div class="title"><span>${nationname}</span>&ensp;<img src="https://yeongmin.s3.ap-northeast-2.amazonaws.com/plane+tag.png" style="width:45px; height:18px; vertical-align:bottom" onerror="this.style.display='none'"></img></div>
+                            <div class="subtitle">여행 불가</div>
+                            <div class="text-margin1"></div>
+                            <div class="text1"><span>여행 목적의 현지 입국 불가능</span></div>
+                         </div>
+                         
+                        `
+
+        
+
+        new mapboxgl.Popup()
+            .setLngLat(e.lngLat)
+            .setHTML(content)
+            .addTo(map)
+            
+            
+
+
+
+
+
+
+ 
+    // Change the cursor to a pointer when the mouse is over the states layer.
+    map.on('mouseenter', 'nations-layer1', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+ 
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'nations-layer1', function () {
+        map.getCanvas().style.cursor = '';
+    });
+
+
+
+    });
+
+
+
+
+
+
+})
+
+
+
+
+map.on('load', function() {
+    map.addSource('nations2',{
+        'type' : 'geojson',
+        'data' : 'https://yeongmin.s3.ap-northeast-2.amazonaws.com/base2.geojson'
+    });
+    map.addLayer({
+        'id' : 'nations-layer2',
+        'type' : 'fill',
+        'source' : 'nations2',
+        'paint' : {
+
+            'fill-color': 'rgba(210,210,33,0.6)',
+            'fill-outline-color': 'rgba(210,210,33,0.95)',
+        },
+
+    });
+
+  
+
+    map.on('click', 'nations-layer2', (e) => {
+            map.flyTo({
+            center: [e.lngLat.lng, e.lngLat.lat - 15] ,
+            zoom: 3
+            });
+        });
+
+    const popup = new mapboxgl.Popup();
+
+    
+
+    map.on('click', 'nations-layer2', function (e) {
+        var plane = e.features[0].properties.PLANE;
+        var travelimg = e.features[0].properties.TRAVELIMG;
+        var nationname = e.features[0].properties.NATION;
+        var quaa = e.features[0].properties.QUAA;
+        var quak = e.features[0].properties.QUAK;
+        var testa1 = e.features[0].properties.TESTA1;
+        var testa2 = e.features[0].properties.TESTA2;
+        var testa3 = e.features[0].properties.TESTA3;
+        var visa1 = e.features[0].properties.VISA1;
+        var visa2 = e.features[0].properties.VISA2;
+        var visa3 = e.features[0].properties.VISA3;
+        var etc1 = e.features[0].properties.ETC1;
+        var etc2 = e.features[0].properties.ETC2;
+
+        
+
+
+        var content = `
+                         <img src="${travelimg}" style="margin-top:20px; width:250px; height:148px;"></img>
+                         <div class="text">
+                          <div class="title"><span>${nationname}</span>&ensp;<img src="${plane}" style="width:45px; height:18px; vertical-align:bottom" onerror="this.style.display='none'"></img></div>
+                            <div class="subtitle">자가격리 시 여행가능</div>
+                            <div class="text-margin1"></div>
+                            <div class="text1"><span>자가격리 : 현지에서&nbsp;</span><span>${quaa}</span><span> ｜ 한국에서&nbsp;</span><span>${quak}</span></div>
+                            <div class="text1">음성증명 :&nbsp;<span>${testa1}</span>&nbsp;<span>${testa2}</span><span>&nbsp;${testa3}</span></div>
+                            <div class="text1">&emsp;&emsp;&emsp;&emsp;&ensp;<span>귀국 항공기 탑승</span>&nbsp;<span>24시간</span><span>&nbsp;내 PCR</span></div>
+                            <div class="text1">${visa1}</span><span>&nbsp;${visa2}</span>&ensp;<span>${visa3}</span></div>
+                            <div class="text2">${etc1}</div>
+                            <div class="text2">${etc2}</div>
+                         </div>
+                         <div class="button"><a href=https://www.skyscanner.co.kr/ target='_blank' style="text-decoration:none; color:white">최저가 항공권 검색</a></div>
+                        `
+
+        
+
+        new mapboxgl.Popup()
+            .setLngLat(e.lngLat)
+            .setHTML(content)
+            .addTo(map)
+            
+            
+
+
+
+
+
+
+ 
+    // Change the cursor to a pointer when the mouse is over the states layer.
+    map.on('mouseenter', 'nations-layer2', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+ 
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'nations-layer2', function () {
+        map.getCanvas().style.cursor = '';
+    });
+
+
+
+    });
+
+
+
+
+
+
+})
+
+
+
+
+
+
+map.on('load', function() {
+    map.addSource('nations3',{
+        'type' : 'geojson',
+        'data' : 'https://yeongmin.s3.ap-northeast-2.amazonaws.com/base3.geojson'
+    });
+    map.addLayer({
+        'id' : 'nations-layer3',
+        'type' : 'fill',
+        'source' : 'nations3',
+        'paint' : {
+
+            'fill-color': 'rgba(33,210,92,0.5)',
+            'fill-outline-color': 'rgba(33,210,92,0.8)',
+
+        },
+
+    });
+
+  
+
+    map.on('click', 'nations-layer3', (e) => {
+            map.flyTo({
+            center: [e.lngLat.lng, e.lngLat.lat - 15] ,
+            zoom: 3
+            });
+        });
+
+    const popup = new mapboxgl.Popup();
+
+    
+
+    map.on('click', 'nations-layer3', function (e) {
+        var plane = e.features[0].properties.PLANE;
+        var travelimg = e.features[0].properties.TRAVELIMG;
+        var nationname = e.features[0].properties.NATION;
+        var quaa = e.features[0].properties.QUAA;
+        var quak = e.features[0].properties.QUAK;
+        var testa1 = e.features[0].properties.TESTA1;
+        var testa2 = e.features[0].properties.TESTA2;
+        var testa3 = e.features[0].properties.TESTA3;
+        var visa1 = e.features[0].properties.VISA1;
+        var visa2 = e.features[0].properties.VISA2;
+        var visa3 = e.features[0].properties.VISA3;
+        var etc1 = e.features[0].properties.ETC;
+        var etc2 = e.features[0].properties.ETC;
+
+        
+
+
+        var content = `
+                         <img src="${travelimg}" style="margin-top:20px; width:250px; height:148px;"></img>
+                         <div class="text">
+                          <div class="title"><span>${nationname}</span>&ensp;<img src="${plane}" style="width:45px; height:18px; vertical-align:bottom" onerror="this.style.display='none'"></img></div>
+                            <div class="subtitle">음성증명서만 있으면 여행가능</div>
+                            <div class="text-margin1"></div>
+                            <div class="text1"><span>자가격리 : 필요없음</span></div>
+                            <div class="text1">음성증명 :&nbsp;<span>${testa1}</span>&nbsp;<span>${testa2}</span><span>&nbsp;${testa3}</span></div>
+                            <div class="text1">&emsp;&emsp;&emsp;&emsp;&ensp;<span>귀국 항공기 탑승</span>&nbsp;<span>24시간</span><span>&nbsp;내 PCR</span></div>
+                            <div class="text1">${visa1}</span><span>&nbsp;${visa2}</span>&ensp;<span>${visa3}</span></div>
+                            <div class="text2">${etc1}</div>
+                            <div class="text2">${etc2}</div>
+                         </div>
+                         <div class="button"><a href=https://www.skyscanner.co.kr/ target='_blank' style="text-decoration:none; color:white">최저가 항공권 검색</a></div>
+                        `
+
+        
+
+        new mapboxgl.Popup()
+            .setLngLat(e.lngLat)
+            .setHTML(content)
+            .addTo(map)
+            
+            
+
+
+
+
+
+
+ 
+    // Change the cursor to a pointer when the mouse is over the states layer.
+    map.on('mouseenter', 'nations-layer3', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+ 
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'nations-layer3', function () {
+        map.getCanvas().style.cursor = '';
+    });
+
+
+
+    });
+
+
+
+
+
+
+})
+
+
+
+map.on('load', function() {
+    map.addSource('nations4',{
+        'type' : 'geojson',
+        'data' : ''
+    });
+    map.addLayer({
+        'id' : 'nations-layer4',
+        'type' : 'fill',
+        'source' : 'nations4',
+        'paint' : {
+
+            'fill-color': 'rgba(83,69,210,0.5)',
+            'fill-outline-color': 'rgba(83,69,210,0.8)',
+            
+        },
+
+    });
+
+  
+
+    map.on('click', 'nations-layer4', (e) => {
+            map.flyTo({
+            center: [e.lngLat.lng, e.lngLat.lat - 15] ,
+            zoom: 3
+            });
+        });
+
+    const popup = new mapboxgl.Popup();
+
+    
+
+    map.on('click', 'nations-layer4', function (e) {
+        var plane = e.features[0].properties.PLANE;
+        var travelimg = e.features[0].properties.TRAVELIMG;
+        var nationname = e.features[0].properties.NATION;
+        var quaa = e.features[0].properties.QUAA;
+        var quak = e.features[0].properties.QUAK;
+        var testa1 = e.features[0].properties.TESTA1;
+        var testa2 = e.features[0].properties.TESTA2;
+        var testa3 = e.features[0].properties.TESTA3;
+        var visa1 = e.features[0].properties.VISA1;
+        var visa2 = e.features[0].properties.VISA2;
+        var visa3 = e.features[0].properties.VISA3;
+        var etc1 = e.features[0].properties.ETC1;
+        var etc2 = e.features[0].properties.ETC2;
+
+        
+
+
+        var content = `
+                         <img src="${travelimg}" style="margin-top:20px; width:250px; height:148px;"></img>
+                         <div class="text">
+                          <div class="title"><span>${nationname}</span>&ensp;<img src="${plane}" style="width:45px; height:18px; vertical-align:bottom" onerror="this.style.display='none'"></img></div>
+                            <div class="subtitle">조건 없이 여행가능</div>
+                            <div class="text-margin1"></div>
+                            <div class="text1"><span>자가격리 : 필요없음</span></div>
+                            <div class="text1">음성증명 : 필요없음</div>
+                            <div class="text1">${visa1}</span><span>&nbsp;${visa2}</span>&ensp;<span>${visa3}</span></div>
+                            <div class="text2">${etc1}</div>
+                            <div class="text2">${etc2}</div>
+                         </div>
+                         <div class="button"><a href=https://www.skyscanner.co.kr/ target='_blank' style="text-decoration:none; color:white">최저가 항공권 검색</a></div>
+                        `
+
+        
+
+        new mapboxgl.Popup()
+            .setLngLat(e.lngLat)
+            .setHTML(content)
+            .addTo(map)
+            
+            
+
+
+
+
+
+
+ 
+    // Change the cursor to a pointer when the mouse is over the states layer.
+    map.on('mouseenter', 'nations-layer4', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+ 
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'nations-layer4', function () {
+        map.getCanvas().style.cursor = '';
+    });
+
+
+
+    });
+
+
+
+
+
+
+})
+
+
+
+
+
+
+</script>   
+
+
+
+</body>
+</html>
