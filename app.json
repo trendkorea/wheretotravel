@@ -6,3 +6,10 @@
   "keywords": ["node", "express", "heroku"],
   "image": "heroku/nodejs"
 }
+
+const http = require("http");
+ 
+/* Prevent Sleep in Heroku Server */
+setInterval(function () {
+  http.get("http://expressme.herokuapp.com");
+}, 600000); // every 10 minutes
